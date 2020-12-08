@@ -59,7 +59,7 @@ export class TodosAccess
                 ":todoName": item.name,
                 ":done": item.done,
                 ":dueDate": item.dueDate,
-                ":attachmentUrl": item.attachmentUrl
+                ":attachmentUrl": item.attachmentUrl || null
             }
         }).promise();
     }

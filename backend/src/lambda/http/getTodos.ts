@@ -9,10 +9,11 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
     const userId = getUserId(event);
     let items = await getUserTodos(userId);
     //Go for each item and generate a signed url link
-    items.forEach(async (item) => {
-        item.attachmentUrl = await getAttachmentUrl(item);
-    });
-    logger.info(`Got items for user: items=${items}, userId=${userId}`);
+    for(let item of items){
+        if(item.attachmentUrl)
+            item.attachmentUrl = await getAttachmentUrl(item);
+    }
+    logger.info(`Got items for user: items=${JSON.stringify(items)}, userId=${userId}`);
     return {
         statusCode: 200,
         headers: {

@@ -12,7 +12,7 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
     const userId = getUserId(event);
 
     const item = await createTodo(newTodo, userId);
-    logger.info(`Created todo item for userId=${userId}, item=${item}`);
+    logger.info(`Created todo item for userId=${userId}, item=${JSON.stringify(item)}`);
 
     return {
         statusCode: 200,

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "d0700d24-79ec-487e-8403-b565bef7f8e0",
+		"_postman_id": "ba73f277-bd01-40c0-8090-0e3af91fd109",
 		"name": "Udacity C4 Project",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,6 +11,16 @@
 				{
 					"name": "Get all todos",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5qTTNSa1kyUVVZeE5EZzVOREl6TmpKRVJqUXlPRVJHTVRRNFEwUkJORGhETmpsRE5ESkJNUSJ9.eyJpc3MiOiJodHRwczovL2lsa2luLXRlc3QuYXV0aDAuY29tLyIsInN1YiI6Imdvb2dsZS1vYXV0aDJ8MTAxMjQyOTU2NzE5MDEzNTc3MjE5IiwiYXVkIjoiTW95WUw0NzFMMXRDUTNnZ2JOYTZQV3VnbkNaalBLcmQiLCJpYXQiOjE2MDc0NDI2NjUsImV4cCI6MTYwNzQ3ODY2NSwiYXRfaGFzaCI6ImlFTlkxSUg4bDhpY291alVxTEgwaUEiLCJub25jZSI6Iks0MXR6R3RRTWNLSHBOa3B4T0lNenFvaGNpbS4wUUhBIn0.CiAMFGCvhTgGXuqkWYr6Y_u6kdhIXuh0TI0kreTC8KMPtdhsosTvUdX4N4WQEQX9b4hiKrqkTA7icp3VqUU8wnPD1bYkHw3nCJCMzihsZyO-ECy_e1vYEm53Mtc6rvzZT4E5mOYl-DpgFY8np20ONBMgu6e9-PEoo-1LHgHvEvh8EFfB1nkv85arvmM-doMS8w6qwnhuA1HA6lWvaRvpiVSzI3DE9VC3NPm0qBkimmFmmZcgK7jyO-VCQA2Gp8YPYxEEV8dClVXQSvpZhYVJR6BwfLjC9H2cC_E4LtuG_L0zwablbIyF3Q4-oPJHtV40C6o_w2M0M8TpvhHzNUExwA",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -19,17 +29,13 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos",
+							"raw": "https://{{apiId}}.execute-api.us-east-2.amazonaws.com/dev/todos",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
 								"execute-api",
-								"us-east-1",
+								"us-east-2",
 								"amazonaws",
 								"com"
 							],
@@ -44,6 +50,16 @@
 				{
 					"name": "Create todo",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5qTTNSa1kyUVVZeE5EZzVOREl6TmpKRVJqUXlPRVJHTVRRNFEwUkJORGhETmpsRE5ESkJNUSJ9.eyJpc3MiOiJodHRwczovL2lsa2luLXRlc3QuYXV0aDAuY29tLyIsInN1YiI6Imdvb2dsZS1vYXV0aDJ8MTAxMjQyOTU2NzE5MDEzNTc3MjE5IiwiYXVkIjoiTW95WUw0NzFMMXRDUTNnZ2JOYTZQV3VnbkNaalBLcmQiLCJpYXQiOjE2MDc0NDI2NjUsImV4cCI6MTYwNzQ3ODY2NSwiYXRfaGFzaCI6ImlFTlkxSUg4bDhpY291alVxTEgwaUEiLCJub25jZSI6Iks0MXR6R3RRTWNLSHBOa3B4T0lNenFvaGNpbS4wUUhBIn0.CiAMFGCvhTgGXuqkWYr6Y_u6kdhIXuh0TI0kreTC8KMPtdhsosTvUdX4N4WQEQX9b4hiKrqkTA7icp3VqUU8wnPD1bYkHw3nCJCMzihsZyO-ECy_e1vYEm53Mtc6rvzZT4E5mOYl-DpgFY8np20ONBMgu6e9-PEoo-1LHgHvEvh8EFfB1nkv85arvmM-doMS8w6qwnhuA1HA6lWvaRvpiVSzI3DE9VC3NPm0qBkimmFmmZcgK7jyO-VCQA2Gp8YPYxEEV8dClVXQSvpZhYVJR6BwfLjC9H2cC_E4LtuG_L0zwablbIyF3Q4-oPJHtV40C6o_w2M0M8TpvhHzNUExwA",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -63,12 +79,12 @@
 							"raw": "{\n\t\"name\": \"Water flowers\",\n\t\"dueDate\": \"2019-06-11\"\n}"
 						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos",
+							"raw": "https://{{apiId}}.execute-api.us-east-2.amazonaws.com/dev/todos",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
 								"execute-api",
-								"us-east-1",
+								"us-east-2",
 								"amazonaws",
 								"com"
 							],
@@ -83,7 +99,17 @@
 				{
 					"name": "Update todo",
 					"request": {
-						"method": "PUT",
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5qTTNSa1kyUVVZeE5EZzVOREl6TmpKRVJqUXlPRVJHTVRRNFEwUkJORGhETmpsRE5ESkJNUSJ9.eyJpc3MiOiJodHRwczovL2lsa2luLXRlc3QuYXV0aDAuY29tLyIsInN1YiI6Imdvb2dsZS1vYXV0aDJ8MTAxMjQyOTU2NzE5MDEzNTc3MjE5IiwiYXVkIjoiTW95WUw0NzFMMXRDUTNnZ2JOYTZQV3VnbkNaalBLcmQiLCJpYXQiOjE2MDc0NDI2NjUsImV4cCI6MTYwNzQ3ODY2NSwiYXRfaGFzaCI6ImlFTlkxSUg4bDhpY291alVxTEgwaUEiLCJub25jZSI6Iks0MXR6R3RRTWNLSHBOa3B4T0lNenFvaGNpbS4wUUhBIn0.CiAMFGCvhTgGXuqkWYr6Y_u6kdhIXuh0TI0kreTC8KMPtdhsosTvUdX4N4WQEQX9b4hiKrqkTA7icp3VqUU8wnPD1bYkHw3nCJCMzihsZyO-ECy_e1vYEm53Mtc6rvzZT4E5mOYl-DpgFY8np20ONBMgu6e9-PEoo-1LHgHvEvh8EFfB1nkv85arvmM-doMS8w6qwnhuA1HA6lWvaRvpiVSzI3DE9VC3NPm0qBkimmFmmZcgK7jyO-VCQA2Gp8YPYxEEV8dClVXQSvpZhYVJR6BwfLjC9H2cC_E4LtuG_L0zwablbIyF3Q4-oPJHtV40C6o_w2M0M8TpvhHzNUExwA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -102,19 +128,19 @@
 							"raw": "{\n\t\"name\": \"Change the world\",\n\t\"dueDate\": \"2019-12-11\",\n\t\"done\": true\n}"
 						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos/35dd600f-43c2-4649-903c-615e1586a26f",
+							"raw": "https://{{apiId}}.execute-api.us-east-2.amazonaws.com/dev/todos/2d297c58-9a27-4ba6-910f-bd3b0addcc2f",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
 								"execute-api",
-								"us-east-1",
+								"us-east-2",
 								"amazonaws",
 								"com"
 							],
 							"path": [
 								"dev",
 								"todos",
-								"35dd600f-43c2-4649-903c-615e1586a26f"
+								"2d297c58-9a27-4ba6-910f-bd3b0addcc2f"
 							]
 						}
 					},
@@ -142,12 +168,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos/fe671583-4512-45f6-9475-4265c04362fb",
+							"raw": "https://{{apiId}}.execute-api.us-east-2.amazonaws.com/dev/todos/fe671583-4512-45f6-9475-4265c04362fb",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
 								"execute-api",
-								"us-east-1",
+								"us-east-2",
 								"amazonaws",
 								"com"
 							],
@@ -163,6 +189,16 @@
 				{
 					"name": "Get attachment URL",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5qTTNSa1kyUVVZeE5EZzVOREl6TmpKRVJqUXlPRVJHTVRRNFEwUkJORGhETmpsRE5ESkJNUSJ9.eyJpc3MiOiJodHRwczovL2lsa2luLXRlc3QuYXV0aDAuY29tLyIsInN1YiI6Imdvb2dsZS1vYXV0aDJ8MTAxMjQyOTU2NzE5MDEzNTc3MjE5IiwiYXVkIjoiTW95WUw0NzFMMXRDUTNnZ2JOYTZQV3VnbkNaalBLcmQiLCJpYXQiOjE2MDc0NDI2NjUsImV4cCI6MTYwNzQ3ODY2NSwiYXRfaGFzaCI6ImlFTlkxSUg4bDhpY291alVxTEgwaUEiLCJub25jZSI6Iks0MXR6R3RRTWNLSHBOa3B4T0lNenFvaGNpbS4wUUhBIn0.CiAMFGCvhTgGXuqkWYr6Y_u6kdhIXuh0TI0kreTC8KMPtdhsosTvUdX4N4WQEQX9b4hiKrqkTA7icp3VqUU8wnPD1bYkHw3nCJCMzihsZyO-ECy_e1vYEm53Mtc6rvzZT4E5mOYl-DpgFY8np20ONBMgu6e9-PEoo-1LHgHvEvh8EFfB1nkv85arvmM-doMS8w6qwnhuA1HA6lWvaRvpiVSzI3DE9VC3NPm0qBkimmFmmZcgK7jyO-VCQA2Gp8YPYxEEV8dClVXQSvpZhYVJR6BwfLjC9H2cC_E4LtuG_L0zwablbIyF3Q4-oPJHtV40C6o_w2M0M8TpvhHzNUExwA",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -176,19 +212,19 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos/3836b777-9bc4-4429-9b79-ba4e4f5f91c0/attachment",
+							"raw": "https://{{apiId}}.execute-api.us-east-2.amazonaws.com/dev/todos/a7c13a35-3462-4550-8c3b-9727a9312210/attachment",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
 								"execute-api",
-								"us-east-1",
+								"us-east-2",
 								"amazonaws",
 								"com"
 							],
 							"path": [
 								"dev",
 								"todos",
-								"3836b777-9bc4-4429-9b79-ba4e4f5f91c0",
+								"a7c13a35-3462-4550-8c3b-9727a9312210",
 								"attachment"
 							]
 						}
@@ -200,7 +236,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "ce2b42d4-8cc5-4f30-a6ed-e7f0f303c3fd",
+						"id": "983eafe3-f3af-410b-896f-c74e543c23cf",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -210,21 +246,22 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "efb16c49-3866-4241-97d1-360ad72736d8",
+						"id": "35596027-61c7-42a6-b419-364e8bda8656",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "2e83c0fe-6650-44d5-a90f-4c27ff720d83",
+				"id": "4aacb685-69d6-4b1d-9f90-cb8e0ab7c1d1",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -234,7 +271,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "977c227e-2df3-42eb-9a48-ec25e2f7eeae",
+				"id": "fd59c9ba-8eae-4e6e-8dc6-cfab06abc74d",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -244,16 +281,15 @@
 	],
 	"variable": [
 		{
-			"id": "bf208e6b-f66d-4008-9366-dd541ff65425",
+			"id": "bf4de535-8707-4a3a-8150-d8176471a0b9",
 			"key": "apiId",
-			"value": "",
-			"type": "string"
+			"value": "dixa4krod0"
 		},
 		{
-			"id": "9bc6399a-d2bb-4f2d-9ffa-8480370d383c",
+			"id": "73315e35-b513-4926-acf6-a37754ec05a8",
 			"key": "authToken",
-			"value": "",
-			"type": "string"
+			"value": ""
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
