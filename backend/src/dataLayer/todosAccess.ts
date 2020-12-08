@@ -37,7 +37,6 @@ export class TodosAccess
     async getTodoById(id: string): Promise<AWS.DynamoDB.DocumentClient.QueryOutput>{
         const result =  await this.doClient.query({
             TableName: this.todosTable,
-            IndexName: this.index,
             KeyConditionExpression: 'todoId = :todoId',
             ExpressionAttributeValues: {
                 ':todoId': id,
@@ -52,7 +51,7 @@ export class TodosAccess
             Key: {
                 "todoId": item.todoId,
             },
-            UpdateExpression: "set #nameField = :todoName, done = :done, dueDate = :dueDate",
+            UpdateExpression: "set #nameField = :todoName, done = :done, dueDate = :dueDate, attachmentUrl = :attachmentUrl",
             ExpressionAttributeNames: {
                 "#nameField": "name"
             },
@@ -60,6 +59,7 @@ export class TodosAccess
                 ":todoName": item.name,
                 ":done": item.done,
                 ":dueDate": item.dueDate,
+                ":attachmentUrl": item.attachmentUrl
             }
         }).promise();
     }

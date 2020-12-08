@@ -1,19 +1,23 @@
 import { APIGatewayProxyEvent, APIGatewayProxyHandler, APIGatewayProxyResult } from 'aws-lambda';
 import 'source-map-support/register';
-import { getUserTodos } from '../../businessLogic/todos';
+import { getAttachmentUrl, getUserTodos } from '../../businessLogic/todos';
 import { createLogger } from '../../utils/logger';
 import { getUserId } from '../utils';
 const logger = createLogger("getTodos");
 
 export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
     const userId = getUserId(event);
-    const items = await getUserTodos(userId);
-    logger.info("Got items for user")
+    let items = await getUserTodos(userId);
+    //Go for each item and generate a signed url link
+    items.forEach(async (item) => {
+        item.attachmentUrl = await getAttachmentUrl(item);
+    });
+    logger.info(`Got items for user: items=${items}, userId=${userId}`);
     return {
         statusCode: 200,
         headers: {
             'Access-Control-Allow-Origin': "*",
         },
-        body: JSON.stringify({items})
+        body: JSON.stringify({ items })
     };
 }

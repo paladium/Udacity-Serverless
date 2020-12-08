@@ -21,4 +21,11 @@ export class S3Access {
             Expires: this.signedUrlExpireSeconds
         });
     }
+    getAttachmentUrl(attachment: string): string{
+        return this.s3Client.getSignedUrl("getObject", {
+            Bucket: this.bucketName,
+            Key: attachment,
+            Expires: this.signedUrlExpireSeconds
+        });
+    }
 }
