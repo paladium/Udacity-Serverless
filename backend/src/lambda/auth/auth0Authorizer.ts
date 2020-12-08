@@ -62,7 +62,7 @@ async function verifyToken(authHeader: string): Promise<JwtPayload> {
   // You can read more about how to do this here: https://auth0.com/blog/navigating-rs256-and-jwks/
   //Download the keys and find one that has the same kid value
   const kid = jwt.header.kid;
-  const keys = await (await Axios.get(jwksUrl)).data;
+  const keys = (await Axios.get(jwksUrl)).data;
   const foundKey = (keys as any[]).find((item) => item.kid == kid);
   if(!foundKey){
       throw new Error("Key cannot be found");
